@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="callbacks"></a>
+        <h2>Widget and Window Callbacks</h2>
+        <hr>
+        <p>
+            Each input widget has a callback which is ran when the widget is interacted with.
+            <br><br>
+            Callbacks are used to give functionality to widgets.
+            Callbacks can either be assigned to the widget upon creation or after creation using <i>set_item_callback</i> as shown in the code below.
+            <br><br>
+            <b>Every callback applied to an item in Dear PyGui must take in a <i>sender</i> and <i>data</i> argument.</b>
+            <br><br>
+            The <i>sender</i> argument is used by Dear PyGui to inform the callback which widget triggered the callback by sending the name.
+            <br><br>
+            The <i>data</i> argument is used by various standard callbacks to send additional data by specifying the callback <i>callback_data</i>.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def button_callback(sender, data):
+    log_debug(f"sender is: {sender}")
+    log_debug(f"data is: {data}")
+
+show_logger()  # we're going to use the logger here to show the result
+
+with window("Tutorial"):
+    add_input_text("Input Text", default_value="Hello World!")
+    add_button("Apply", callback=button_callback, callback_data=get_value("Input Text"))
+    add_button("Apply##2", tip="callback was set after item was created")
+    set_item_callback("Apply##2", callback=button_callback, callback_data=get_value("Input Text"))
+
+start_dearpygui()</code> </pre>
+        <p>
+            We can use the callback to update the value of a Python variable each time the widget is interacted with.
+            This is shown in the example below:
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def update_var(sender, data):
+    my_var = get_value("Input Checkbox")
+    log_debug(my_var)
+
+show_logger() # were going to use the logger here to show the result
+
+with window("Tutorial"):
+    add_checkbox("Input Checkbox", callback=update_var)
+
+start_dearpygui()</code> </pre>
+        <p>
+            and again but using a more clever approach by utilizing <i>sender</i>
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def update_var(sender, data):
+    my_var = get_value(sender)
+    log_debug(my_var)
+
+
+show_logger() # were going to use the logger here to show the result
+
+with window("Tutorial"):
+    add_checkbox("Input Checkbox", callback=update_var)
+    add_input_text("Input Text", callback=update_var)
+    add_input_int("Input Int", callback=update_var)
+
+start_dearpygui()</code> </pre>
+        <p>
+            Window type widgets have special callbacks that are triggered on events such as window resizing and window closing.
+            The window specific callbacks can be applied to any window type widget.
+            <i>on_close</i> will run the callback assigned to the keyword on window close and
+            <i>set_resize_callback</i>
+            will run on every resize of the container and can be set to any specific window by using the handler keyword, the default is the "MainWindow"
+            <br><br>
+        If you would like a callback to be ran every frame, you can use
+        <i>set_render_callback</i>
+            
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+
+def close_me(sender, data):
+    log_debug(f"{sender} window has been closed")
+
+
+def render_me(sender, data):
+    log_debug(f"window {sender} has ran a render callback")
+
+
+def resize_me(sender, data):
+    log_debug(f"window {sender} has ran a resize callback")
+
+
+show_logger()                                      # were going to use the logger to display callback replies
+with window("Tester", on_close=close_me):
+    add_text('resize this window resize callback will occur')
+    add_text('close this window using the "x" button and a close callback will occur')
+
+set_render_callback(render_me)
+set_resize_callback(resize_me, handler="Tester")
+
+start_dearpygui()</code> </pre>
+    </article>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="data_storage"></a>
+        <h2>Value & Data Storage</h2>
+        <hr>
+        <p>
+            When a new widget is added, a value is added to the value storage system. The identifier to this value is the name of the widget by default.
+            You can override the identifier by using the source keyword. One of the benefits of doing this is to have multiple widgets control the same value.
+            <br><br>
+            Values are retrieved from the value system using <i>get_value</i>.
+            <br><br>
+            Values can be changed manually using <i>set_value</i>.
+            <br><br>
+            For widgets of different value types to use the same value in the storage system the larger value must be created first.
+            <br><br>
+            For example, when a input_float3 is created the value type stored is a <b>[float, float, float]</b>. A later created input_float2 could
+            use the same source as the input_float3.
+            <br><br>
+            However, if the input_float2 was created first and then tried to share its' source with an input_float3 it would not work.
+            <br><br>
+            In order for the input_float3 and input_float2 to share the same source we can create the input_float3 needs to be created first.
+            This is accomplished with <i>add_value()</i>.
+
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def print_me(sender, data):
+    log_debug(f"checkbox values: {get_value('value_1')}")
+    log_debug(f"text values: {get_value('value 2')}")
+    log_debug(f"color values: {get_value('color4')}")
+
+
+def reset(sender, data):
+    set_value("value_1", False)
+    set_value("value 2", "Hello World!")
+
+
+show_logger()
+
+with window("Tutorial"):
+    add_checkbox("Radio Button1", source="value_1")
+    add_checkbox("Radio Button2", source="value_1")
+    add_input_text("Text Input 1", source="value 2")
+    add_input_text("Text Input 2", source="value 2", password=True, tip="this input text has password applied")
+    add_button("Print source values", callback=print_me)
+    add_button("Reset source values", callback=reset)
+
+    # special case when linking a smaller input type widget to a larger one create the large value first
+    add_value("color4", (0.0, 0.0, 0.0, 0.0))
+    add_color_edit3("color edit 3", source="color4")
+    add_color_edit4("color edit 4", source="color4")
+
+start_dearpygui()</code></pre>
+        <p>
+            DPG provides general data for data storage also. With <i>add_data</i> we can
+            pass in any Python item to be stored as a data item and accessed later with <i>get_data("name")</i>
+            <br><br>
+            <em><b>Remember you can store any Python object in data storage even custom data types.</b></em>
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def store_data(sender, data):
+    custom_data = {
+        "Radio Button": get_value("Radio Button"),
+        "Checkbox": get_value("Checkbox"),
+        "Text Input": get_value("Text Input"),
+    }
+    add_data("stored_data", custom_data)
+
+def print_data(sender, data):
+    log_debug(get_data("stored_data"))
+
+show_logger()
+show_debug()
+
+with window("Tutorial"):
+    add_radio_button("Radio Button", items=["item1", "item2"])
+    add_checkbox("Checkbox")
+    add_input_text("Text Input")
+    add_button("Store Data", callback=store_data)
+    add_button("Print Data", callback=print_data)
+
+
+start_dearpygui()</code></pre>
+    </article>
+</html>

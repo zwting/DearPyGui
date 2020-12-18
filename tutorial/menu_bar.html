@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="menu_bar"></a>
+        <h2>Menu Bar</h2>
+        <hr>
+        <p>
+            A very important widget for GUI functionality is a Menu Bar. Menu bars are always displayed on the top of a window and have 3 main parts:
+            <ol>
+                <li>The Menu Bar - The main menu ribbon</li>
+                <li>Menus - Drop down menus "sub-menus"</li>
+                <li>Menu Items - Items that can run callbacks (basically selectables)</li>
+            </ol>
+            Items are added to the Menu Bar from right to left. Items are added to the menus from top to bottom.
+            <br><br>
+            Menus can be nested as much as necessary.
+            <br><br>
+            Any widget can be added to a menu.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+
+def print_me(sender, data):
+    log_debug(f"Menu Item: {sender}")
+
+
+show_logger()
+
+with window("Tutorial"):
+
+    with menu_bar("Main Menu Bar"):
+
+        with menu("File"):
+
+            add_menu_item("Save", callback=print_me)
+            add_menu_item("Save As", callback=print_me)
+
+            with menu("Settings"):
+
+                add_menu_item("Setting 1", callback=print_me)
+                add_menu_item("Setting 2", callback=print_me)
+
+        add_menu_item("Help", callback=print_me)
+
+        with menu("Widget Items"):
+
+            add_checkbox("Pick Me", callback=print_me)
+            add_button("Press Me", callback=print_me)
+            add_color_picker4("Color Me", callback=print_me)
+
+start_dearpygui()</code></pre>
+    </article>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="logging"></a>
+        <h2>Built-in Logging</h2>
+        <hr>
+        <p>
+            One of the many powerful built in developer tools is the <b>Logger</b>. This can be accessed through the command
+            <i>show_logger</i>. The logger has 6 log levels:
+        <ol>
+            <li>Trace</li>
+            <li>Debug</li>
+            <li>Info</li>
+            <li>Warning</li>
+            <li>Error</li>
+            <li>Off</li>
+        </ol>
+        See example below:
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+show_logger()
+set_log_level(mvTRACE)
+log("trace message")
+log_debug("debug message")
+log_info("info message")
+log_warning("warning message")
+log_error("error message")
+
+start_dearpygui()</code></pre>
+    </article>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="runtime"></a>
+        <h2>Run-time Adding & Deleting Widgets</h2>
+        <hr>
+        <p>
+            With Dear PyGui you can dynamically add and delete any items at runtime. This can be done by using a callback
+            to run the desired item's <i>add_***</i> command and specifying the parent the item will belong to. By default the widget will be added to the
+            MainWindow if there is no parent specified.
+            <br>
+            By using the keyword <i>before</i> when adding a item you can control which item in the parent the new item will come before.
+            Default will place the new widget at the end.
+            <br><br>
+            In this example we used the "debug" developer tool to view the current state of the widgets.
+            Go to the "App Item Layout" tab on the debug widget and this tab displays the state and properties of the App.
+            clicking on the "MainWindow" tree item we can see the widgets currently displayed on the MainWindow.
+            Try clicking the "Add/Delete" buttons on the main window and see the tree state change.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def add_buttons(sender, data):
+    add_button("New Button")
+    add_button("New Button 2", parent="Secondary Window")
+
+def delete_buttons(sender, data):
+    delete_item("New Button")
+    delete_item("New Button 2")
+
+show_debug()
+
+with window("Tutorial"):
+    add_button("Add Buttons", callback=add_buttons)
+    add_button("Delete Buttons", callback=delete_buttons)
+
+with window("Secondary Window"):
+    pass
+
+start_dearpygui()</code> </pre>
+        <p>
+            When deleting a container the container and its children are deleted by default, unless the keyword <i>children_only</i> is set to <b>True</b>.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def add_widgets(sender, data):
+
+    with window("Secondary Window"): # simple
+        add_button("New Button 2")
+        add_button("New Button")
+        add_button("New Button 3", parent="Secondary Window")
+
+def delete_widgets(sender, data):
+    delete_item("Secondary Window")
+    delete_item("New Button")
+
+def delete_children(sender, data):
+    delete_item("Secondary Window", children_only=True)
+
+show_debug()
+
+with window("Tutorial"):
+    add_button("Add Window and Items", callback=add_widgets)
+    add_button("Delete Window and Children", callback=delete_widgets)
+    add_button("Delete Window's Children", callback=delete_children)
+
+start_dearpygui()</code> </pre>
+    </article>
+</html>

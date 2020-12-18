@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="tables"></a>
+        <h2>Tables</h2>
+        <hr>
+        <p>
+            Dear PyGui has a simple table API that is well suited for static and dynamic tables.
+            <br><br>
+            The table widget is started by calling <i>add_table()</i>.
+            <br><br>
+            To edit the table widget we can use the methods <i>add_row()</i>
+            <i>add_column()</i> which will append the row/column to the
+            last slot in the table.
+            <br><br>
+            Alternatively, we can insert rows/columns using
+            <i>insert_row</i>
+            <i>insert_column</i>.
+            Columns and Rows are inserted according to their index argument. If the specified index already exists the exiting columns/rows
+            will be bumped and the new row/column will be inserted at the specified index.
+            <br><br>
+            Also an added or inserted row/column will by default fill unspecified cells with empty cells.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+with window("Tutorial"):
+    add_table("Table Example", ["Header 0", "Header 1"])
+    add_row("Table Example", ["row 0", "text"])
+    add_row("Table Example", ["row 2", "text"])
+    add_column("Table Example", "Header 3", ["data","data"])
+    insert_row("Table Example", 1, ["row 1", "inserted row", "inserted row"])
+    insert_column("Table Example", 2, "Header 2", ["inserted with column", "inserted column", "inserted column"])
+
+start_dearpygui()</code></pre>
+        <p>
+            Additionally, headers and cells can be renamed and their values be changed.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def modify_tables(sender, data):
+    log_debug(f"Table Called: {sender}")
+    coord_list = get_table_selections("Table Example")
+    log_debug(f"Selected Cells (coordinates): {coord_list}")
+    for coordinates in coord_list:
+        set_table_item("Table Example", coordinates[0], coordinates[1], "New Value")
+    set_headers("Table Example", ["New Header 0", "New Header 1", "New Header 2"])
+
+
+show_logger()
+
+with window("Tutorial"):
+    add_spacing(count=5)
+    add_button("Modify Selected Table Values", callback=modify_tables)
+    add_spacing(count=5)
+    add_table("Table Example", ["Header 0", "Header 1"])
+    add_row("Table Example", ["awesome row", "text"])
+    add_row("Table Example", ["super unique", "unique text"])
+    add_column("Table Example", "Header 2", ["text from column", "text from column"])
+    add_row("Table Example", ["boring row"])
+
+start_dearpygui()</code></pre>
+        <p>
+            Tables cells are selectable. This means that we can apply a callback to the table and retrieve which cell was selected through the sender
+            and even get the text inside the cell.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def table_printer(sender, data):
+    log_debug(f"Table Called: {sender}")
+    coord_list = get_table_selections("Table Example")
+    log_debug(f"Selected Cells (coordinates): {coord_list}")
+    names = []
+    for coordinates in coord_list:
+        names.append(get_table_item("Table Example", coordinates[0], coordinates[1]))
+    log_debug(names)
+
+
+show_logger()
+
+with window("Tutorial"):
+    add_table("Table Example", ["Header 0", "Header 1"], callback=table_printer)
+    add_row("Table Example", ["awesome row", "text"])
+    add_row("Table Example", ["super unique", "unique text"])
+    add_column("Table Example", "Header 3", ["text from column", "text from column"])
+    add_row("Table Example", ["boring row"])
+
+start_dearpygui()</code></pre>
+    </article>
+</html>

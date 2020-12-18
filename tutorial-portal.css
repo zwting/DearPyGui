@@ -1,0 +1,72 @@
+html {
+    font-family:
+            system-ui,
+                /* macOS 10.11-10.12 */ -apple-system,
+                /* Windows 6+ */ "Segoe UI",
+                /* Android 4+ */ "Roboto",
+                /* Ubuntu 10.10+ */ "Ubuntu",
+                /* Gnome 3+ */ "Cantarell",
+                /* KDE Plasma 5+ */ "Noto Sans",
+                /* fallback */ sans-serif,
+                /* macOS emoji */ "Apple Color Emoji",
+                /* Windows emoji */ "Segoe UI Emoji",
+                /* Windows emoji */ "Segoe UI Symbol",
+                /* Linux emoji */ "Noto Color Emoji";
+}
+.sidenav {
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4b4c4f;
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.dropdown-btn {
+    width: 230px;
+}
+.sidenav a{
+    width: 210px;
+}
+.dropdown-container a {
+    font-size: 14px;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #b4b4b4;
+}
+
+/* Main content */
+.main {
+    margin-left: 230px; /* Same as the width of the sidenav */
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: #3880fc;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #649cfd;
+    padding-left: 8px;
+}

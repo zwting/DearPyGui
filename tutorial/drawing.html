@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript" src="tutorial-injection.js"></script>
+
+    <article><a name="drawing"></a>
+        <h2>Drawing/Canvas</h2>
+        <hr>
+        <p>
+            Dear PyGui has a low level drawing API that is well suited for primitive drawing, custom widgets or even dynamic drawings.
+            <br><br>
+            The drawing is started by calling <i>add_drawing</i> then items can be added
+            by calling their respective draw commands.
+            The origin for the canvas is in the top left and the y axis points down.
+        </p>
+            <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+with window("Tutorial"):
+    add_drawing("Drawing_1", width=300, height=300)
+
+draw_line("Drawing_1", [10, 10], [100, 100], [255, 0, 0, 255], 1)
+draw_text("Drawing_1", [0, 0], "Origin", color=[250, 250, 250, 255], size=15)
+draw_arrow("Drawing_1", [50, 70], [100, 65], [0, 200, 255], 1, 10)
+
+start_dearpygui()</code></pre>
+        <p>
+            Drawings can display images of types PNG, JPEG, or BMP.
+            Images are drawn using <i>draw_image</i>
+            <br><br>
+            Using the keywords "pmin" and "pmax" we can define the upper left and lower right area of the rectangle that
+            the image will be draw onto the canvas. The image will scale to fit the specified area.
+            <br><br>
+            With keywords "uv_min" and "uv_max" we can define a scalar number of what area on the image should be
+            drawn to the canvas. The default of uv_min = [0,0] and uv_max = [1,1] will display the entire image
+            while uv_min = [0,0] uv_max = [0.5,0.5] will only show the first quarter of the drawing.
+            <br><br>
+            To be able to demonstrate these features you must update the directory to that of an image on your computer, 
+            such as <a href="https://raw.githubusercontent.com/Pcothren/DearPyGui-Examples/main/SpriteMapExample.png">SpriteMapExample.png</a>.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+# please update the image directory argument with a path to an image on your computer for this example
+with window("Tutorial"):
+    add_drawing("Drawing_1", width=700, height=700)
+
+draw_image("Drawing_1", 'SpriteMapExample.png', [0, 700], pmax=[200, 500], uv_min=[0, 0], uv_max=[1, 1], tag="image")
+draw_image("Drawing_1", 'SpriteMapExample.png', [0, 600], pmax=[200, 300], uv_min=[0, 0], uv_max=[1, 1])
+draw_image("Drawing_1", 'SpriteMapExample.png', [0, 500], pmax=[200, 100], uv_min=[0, 0], uv_max=[1, 1])
+draw_image("Drawing_1", 'SpriteMapExample.png', [400, 600], pmax=[600, 400], uv_min=[0, 0], uv_max=[0.5, 0.5])
+draw_image("Drawing_1", 'SpriteMapExample.png', [400, 400], pmax=[700, 50], uv_min=[0, 0], uv_max=[3.5, 2.5])
+
+start_dearpygui()</code></pre>
+
+        <p>
+            Although drawings can be made dynamic by clearing and redrawing the entire thing a more efficient method is offered.
+            <br><br>
+            To make a drawing dynamic we should use the tag keyword to tag the items we would like to redraw. Then simply call a draw command
+            using the same tag. This will delete only that one item and redraw it with the new command.
+        </p>
+        <pre><code data-language="python">from dearpygui.core import *
+from dearpygui.simple import *
+
+def on_render(sender, data):
+    clear_drawing("Drawing_1")
+    counter = get_data("counter")
+    counter += 1
+    modifier = get_data("modifier")
+    if counter < 300:
+        modifier += 1
+    elif counter < 600:
+        modifier -= 1
+    else:
+        counter = 0
+        modifier = 2
+
+    xpos = 15 + modifier*1.25
+    ypos = 15 + modifier*1.25
+    color1 = 255 - modifier*.8
+    color3 = 255 - modifier*.3
+    color2 = 255 - modifier*.8
+    radius = 15 + modifier/2
+    segments = round(35-modifier/10)
+    draw_circle("Drawing_1", [xpos, ypos], radius, [color1, color3, color2, 255], segments=segments, tag="circle##dynamic")
+    add_data("counter", counter)
+    add_data("modifier", modifier)
+
+add_data("counter", 0)
+add_data("modifier", 2)
+
+with window("Tutorial"):
+    add_drawing("Drawing_1", width=700, height=700)
+
+set_render_callback(on_render)
+
+start_dearpygui()</code></pre>
+    </article>
+</html>

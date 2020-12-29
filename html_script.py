@@ -23,7 +23,7 @@ for index, line in enumerate(api_html):
 
 # removing the old link and inserting the new inserting the new link
 api_html.pop(index)
-api_html.insert(index, '<li><code><a title="dearpygui" href="api_docs.html">dearpygui</a></code></li>\n')
+api_html.insert(index, '<li><code><a title="dearpygui" href="index.html">dearpygui</a></code></li>\n')
 
 # writing the final api docs with logo
 with open('api_simple.html', 'w') as f:
@@ -50,7 +50,7 @@ for index, line in enumerate(api_html):
 
 # removing the old link and inserting the new inserting the new link
 api_html.pop(index)
-api_html.insert(index, '<li><code><a title="dearpygui" href="api_docs.html">dearpygui</a></code></li>\n')
+api_html.insert(index, '<li><code><a title="dearpygui" href="index.html">dearpygui</a></code></li>\n')
 
 # writing the final api docs with logo
 with open('api_core.html', 'w') as f:

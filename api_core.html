@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.1" />
+<meta name="generator" content="pdoc 0.9.2" />
 <title>dearpygui.core API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -345,10 +345,8 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>height : int = 0</p>
 </li>
 <li>
-<p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
+<p>label : str = ''
+Overrides 'name' as label</p>
 </li>
 <li>
 <p>show : bool = True
@@ -475,13 +473,12 @@ Parent to add this item to. (runtime adding)</p>
 This item will be displayed before the specified item in the parent. (runtime adding)</p>
 </li>
 <li>
-<p>source : str = ''</p>
+<p>source : str = ''
+Overrides 'name' as value storage key</p>
 </li>
 <li>
-<p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
+<p>label : str = ''
+Overrides 'name' as label</p>
 </li>
 <li>
 <p>show : bool = True
@@ -534,9 +531,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 </li>
 <li>
 <p>border : bool = True</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>autosize_x : bool = False
@@ -668,9 +662,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>height : int = 0</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attemp to render</p>
 </li>
@@ -740,9 +731,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -876,9 +864,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -1010,9 +995,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -1142,9 +1124,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -1328,7 +1307,8 @@ Parent this item will be added to. (runtime adding)</p>
 This item will be displayed before the specified item in the parent. (runtime adding)</p>
 </li>
 <li>
-<p>source : str = ''</p>
+<p>source : str = ''
+Overrides 'name' as value storage key</p>
 </li>
 <li>
 <p>enabled : bool = True
@@ -1338,10 +1318,8 @@ Display grayed out text so selectable cannot be selected</p>
 <p>width : int = 0</p>
 </li>
 <li>
-<p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
+<p>label : str = ''
+Overrides 'name' as label</p>
 </li>
 <li>
 <p>show : bool = True
@@ -1687,9 +1665,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -1768,9 +1743,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -1853,9 +1825,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -1934,9 +1903,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -2019,9 +1985,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -2100,9 +2063,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -2185,9 +2145,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -2266,9 +2223,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -2401,9 +2355,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 </li>
 <li>
 <p>height : int = 0</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -2539,9 +2490,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <li>
 <p>horizontal_spacing : float = -1</p>
 </li>
-<li>
-<p>popup : str = ''</p>
-</li>
 </ul></div>
 </dd>
 <dt id="dearpygui.core.add_heat_series"><code class="name flex">
@@ -2656,9 +2604,6 @@ normalized texture coordinates</p>
 normalized texture coordinates</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -2727,9 +2672,6 @@ normalized texture coordinates</p>
 <li>
 <p>uv_max : List[float] = (1.0, 1.0)
 normalized texture coordinates</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -2884,9 +2826,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -2963,9 +2902,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -3034,9 +2970,6 @@ Only runs callback on enter</p>
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -3109,9 +3042,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -3177,9 +3107,6 @@ Only runs callback on enter</p>
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -3255,9 +3182,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -3325,9 +3249,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -3393,9 +3314,6 @@ Only runs callback on enter</p>
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -3500,9 +3418,6 @@ Only runs callback on enter</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -3550,9 +3465,6 @@ data source for shared data</p>
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -3663,9 +3575,6 @@ number of items to show</p>
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -4122,6 +4031,9 @@ update plot bounds</p>
 <p>anti_aliased : bool = False</p>
 </li>
 <li>
+<p>equal_aspects : bool = False</p>
+</li>
+<li>
 <p>yaxis2 : bool = False</p>
 </li>
 <li>
@@ -4361,9 +4273,6 @@ data source for shared data</p>
 <p>height : int = 0</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -4422,9 +4331,6 @@ Display grayed out text so selectable cannot be selected</p>
 </li>
 <li>
 <p>horizontal : bool = False</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -4594,9 +4500,6 @@ Display grayed out text so selectable cannot be selected</p>
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -4747,9 +4650,6 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -4835,9 +4735,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -4913,9 +4810,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -4995,9 +4889,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -5073,9 +4964,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -5163,9 +5051,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -5241,9 +5126,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -5323,9 +5205,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 <p>label : str = ''</p>
 </li>
 <li>
-<p>popup : str = ''</p>
-</li>
-<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -5401,9 +5280,6 @@ Clamp value to min/max bounds when input manually with CTRL+Click. By default CT
 </li>
 <li>
 <p>label : str = ''</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>show : bool = True
@@ -5876,9 +5752,6 @@ Parent this item will be added to. (runtime adding)</p>
 <li>
 <p>before : str = ''
 This item will be displayed before the specified item in the parent. (runtime adding)</p>
-</li>
-<li>
-<p>popup : str = ''</p>
 </li>
 <li>
 <p>source : str = ''</p>
@@ -8287,6 +8160,24 @@ function to call on completion</li>
 <li>callback : Any</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.set_global_color"><code class="name flex">
+<span>def <span class="ident">set_global_color</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets an color of a theme item.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>id : int
+mvGuiCol_* constants</p>
+</li>
+<li>
+<p>color : List[float]</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.set_global_font_scale"><code class="name flex">
 <span>def <span class="ident">set_global_font_scale</span></span>(<span>...)</span>
 </code></dt>
@@ -8314,6 +8205,27 @@ default is 1.0</li>
 </li>
 <li>
 <p>headers : List[str]</p>
+</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.set_individual_color"><code class="name flex">
+<span>def <span class="ident">set_individual_color</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets an color of a theme item.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>item : str</p>
+</li>
+<li>
+<p>id : int
+mvGuiCol_* constants</p>
+</li>
+<li>
+<p>color : List[float]</p>
 </li>
 </ul></div>
 </dd>
@@ -8728,9 +8640,13 @@ Registers a callback</li>
 Registers a callback</p>
 </li>
 <li>
-<p>handler : str
-Callback will be run when event occurs while this window is active (default is main window)</p>
+<p>Keyword Only Arguments</p>
 </li>
+</ul>
+<hr>
+<ul>
+<li>handler : str = ''
+Callback will be run when window is resized (default is viewport)</li>
 </ul></div>
 </dd>
 <dt id="dearpygui.core.set_start_callback"><code class="name flex">
@@ -9693,8 +9609,10 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.set_accelerator_callback" href="#dearpygui.core.set_accelerator_callback">set_accelerator_callback</a></code></li>
 <li><code><a title="dearpygui.core.set_color_map" href="#dearpygui.core.set_color_map">set_color_map</a></code></li>
 <li><code><a title="dearpygui.core.set_exit_callback" href="#dearpygui.core.set_exit_callback">set_exit_callback</a></code></li>
+<li><code><a title="dearpygui.core.set_global_color" href="#dearpygui.core.set_global_color">set_global_color</a></code></li>
 <li><code><a title="dearpygui.core.set_global_font_scale" href="#dearpygui.core.set_global_font_scale">set_global_font_scale</a></code></li>
 <li><code><a title="dearpygui.core.set_headers" href="#dearpygui.core.set_headers">set_headers</a></code></li>
+<li><code><a title="dearpygui.core.set_individual_color" href="#dearpygui.core.set_individual_color">set_individual_color</a></code></li>
 <li><code><a title="dearpygui.core.set_item_callback" href="#dearpygui.core.set_item_callback">set_item_callback</a></code></li>
 <li><code><a title="dearpygui.core.set_item_color" href="#dearpygui.core.set_item_color">set_item_color</a></code></li>
 <li><code><a title="dearpygui.core.set_item_style_var" href="#dearpygui.core.set_item_style_var">set_item_style_var</a></code></li>
@@ -9776,7 +9694,7 @@ Attempt to render</p>
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
 </footer>
 </body>
 </html>

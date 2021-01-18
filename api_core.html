@@ -2786,6 +2786,20 @@ Attempt to render</p>
 <p>default_value : float = 0.0</p>
 </li>
 <li>
+<p>min_value : float = 0</p>
+</li>
+<li>
+<p>max_value : float = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
+</li>
+<li>
 <p>format : str = '%.3f'</p>
 </li>
 <li>
@@ -2862,6 +2876,20 @@ Attempt to render</p>
 <p>default_value : List[float] = (0.0, 0.0)</p>
 </li>
 <li>
+<p>min_value : float = 0</p>
+</li>
+<li>
+<p>max_value : float = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
+</li>
+<li>
 <p>format : str = '%.3f'</p>
 </li>
 <li>
@@ -2930,6 +2958,20 @@ Attempt to render</p>
 <ul>
 <li>
 <p>default_value : List[float] = (0.0, 0.0, 0.0)</p>
+</li>
+<li>
+<p>min_value : float = 0</p>
+</li>
+<li>
+<p>max_value : float = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
 </li>
 <li>
 <p>format : str = '%.3f'</p>
@@ -3002,6 +3044,20 @@ Attempt to render</p>
 <p>default_value : List[float] = (0.0, 0.0, 0.0, 0.0)</p>
 </li>
 <li>
+<p>min_value : float = 0</p>
+</li>
+<li>
+<p>max_value : float = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
+</li>
+<li>
 <p>format : str = '%.3f'</p>
 </li>
 <li>
@@ -3070,6 +3126,20 @@ Attempt to render</p>
 <ul>
 <li>
 <p>default_value : int = 0</p>
+</li>
+<li>
+<p>min_value : int = 0</p>
+</li>
+<li>
+<p>max_value : int = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
 </li>
 <li>
 <p>callback : Callable = None
@@ -3145,6 +3215,20 @@ Attempt to render</p>
 <p>default_value : List[int] = (0, 0)</p>
 </li>
 <li>
+<p>min_value : int = 0</p>
+</li>
+<li>
+<p>max_value : int = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
+</li>
+<li>
 <p>callback : Callable = None
 Registers a callback</p>
 </li>
@@ -3212,6 +3296,20 @@ Attempt to render</p>
 <p>default_value : List[int] = (0, 0, 0)</p>
 </li>
 <li>
+<p>min_value : int = 0</p>
+</li>
+<li>
+<p>max_value : int = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
+</li>
+<li>
 <p>callback : Callable = None
 Registers a callback</p>
 </li>
@@ -3277,6 +3375,20 @@ Attempt to render</p>
 <ul>
 <li>
 <p>default_value : List[int] = (0, 0, 0, 0)</p>
+</li>
+<li>
+<p>min_value : int = 0</p>
+</li>
+<li>
+<p>max_value : int = 100</p>
+</li>
+<li>
+<p>min_clamped : bool = False
+activates and deactivates min_value</p>
+</li>
+<li>
+<p>max_clamped : bool = False
+activates and deactivates max_value</p>
 </li>
 <li>
 <p>callback : Callable = None
@@ -3357,6 +3469,10 @@ Filter out spaces, tabs</p>
 </li>
 <li>
 <p>uppercase : bool = False</p>
+</li>
+<li>
+<p>tab_input : bool = False
+Allows tabs to be input instead of changing widget focus</p>
 </li>
 <li>
 <p>decimal : bool = False
@@ -6965,6 +7081,18 @@ add explicit dockspace over viewport</p>
 <li>item : str</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.get_item_callback_data"><code class="name flex">
+<span>def <span class="ident">get_item_callback_data</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns an item' callback data</p>
+<p>Return Type: Any</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>item : str</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.get_item_children"><code class="name flex">
 <span>def <span class="ident">get_item_children</span></span>(<span>...)</span>
 </code></dt>
@@ -7436,20 +7564,6 @@ logger widget</li>
 <li>item : int</li>
 </ul></div>
 </dd>
-<dt id="dearpygui.core.get_thread_count"><code class="name flex">
-<span>def <span class="ident">get_thread_count</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Returns the allowable thread count.</p>
-<p>Return Type: int</p></div>
-</dd>
-<dt id="dearpygui.core.get_threadpool_timeout"><code class="name flex">
-<span>def <span class="ident">get_threadpool_timeout</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Returns the threadpool timeout in seconds.</p>
-<p>Return Type: float</p></div>
-</dd>
 <dt id="dearpygui.core.get_total_time"><code class="name flex">
 <span>def <span class="ident">get_total_time</span></span>(<span>...)</span>
 </code></dt>
@@ -7795,13 +7909,6 @@ logger widget</li>
 <li>plot : str</li>
 </ul></div>
 </dd>
-<dt id="dearpygui.core.is_threadpool_high_performance"><code class="name flex">
-<span>def <span class="ident">is_threadpool_high_performance</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Checks if the threadpool is allowed to use the maximum number of threads.</p>
-<p>Return Type: bool</p></div>
-</dd>
 <dt id="dearpygui.core.log"><code class="name flex">
 <span>def <span class="ident">log</span></span>(<span>...)</span>
 </code></dt>
@@ -8042,32 +8149,6 @@ filters items with extensions i.e '.*, .py'</p>
 <li>plot : str</li>
 </ul></div>
 </dd>
-<dt id="dearpygui.core.run_async_function"><code class="name flex">
-<span>def <span class="ident">run_async_function</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Runs a function asyncronously.</p>
-<p>Return Type: None</p>
-<p>Parameters</p>
-<hr>
-<ul>
-<li>
-<p>name : Any</p>
-</li>
-<li>
-<p>data : Any
-Data that will be sent into the async function.</p>
-</li>
-<li>
-<p>Keyword Only Arguments</p>
-</li>
-</ul>
-<hr>
-<ul>
-<li>return_handler : Callable = None
-function called on completion</li>
-</ul></div>
-</dd>
 <dt id="dearpygui.core.select_directory_dialog"><code class="name flex">
 <span>def <span class="ident">select_directory_dialog</span></span>(<span>...)</span>
 </code></dt>
@@ -8255,6 +8336,24 @@ Registers a callback</p>
 Callback data</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.set_item_callback_data"><code class="name flex">
+<span>def <span class="ident">set_item_callback_data</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets an item's callback data if applicable.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>item : str</p>
+</li>
+<li>
+<p>callback_data : Any
+Callback data</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.set_item_color"><code class="name flex">
 <span>def <span class="ident">set_item_color</span></span>(<span>...)</span>
 </code></dt>
@@ -8356,6 +8455,18 @@ Registers a callback</li>
 <ul>
 <li>logger : str = ''
 logger widget</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.set_logger_window_title"><code class="name flex">
+<span>def <span class="ident">set_logger_window_title</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the title of the logger window.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>title : str</li>
 </ul></div>
 </dd>
 <dt id="dearpygui.core.set_main_window_pos"><code class="name flex">
@@ -9180,37 +9291,6 @@ mvGuiCol_* constants</p>
 </li>
 </ul></div>
 </dd>
-<dt id="dearpygui.core.set_thread_count"><code class="name flex">
-<span>def <span class="ident">set_thread_count</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Sets number of threads to use if the threadpool is active.</p>
-<p>Return Type: None</p>
-<p>Parameters</p>
-<hr>
-<ul>
-<li>threads : int</li>
-</ul></div>
-</dd>
-<dt id="dearpygui.core.set_threadpool_high_performance"><code class="name flex">
-<span>def <span class="ident">set_threadpool_high_performance</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set the thread count to the maximum number of threads on your computer.</p>
-<p>Return Type: None</p></div>
-</dd>
-<dt id="dearpygui.core.set_threadpool_timeout"><code class="name flex">
-<span>def <span class="ident">set_threadpool_timeout</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Sets the threadpool timeout.</p>
-<p>Return Type: None</p>
-<p>Parameters</p>
-<hr>
-<ul>
-<li>time : float</li>
-</ul></div>
-</dd>
 <dt id="dearpygui.core.set_value"><code class="name flex">
 <span>def <span class="ident">set_value</span></span>(<span>...)</span>
 </code></dt>
@@ -9506,6 +9586,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.get_draw_command" href="#dearpygui.core.get_draw_command">get_draw_command</a></code></li>
 <li><code><a title="dearpygui.core.get_global_font_scale" href="#dearpygui.core.get_global_font_scale">get_global_font_scale</a></code></li>
 <li><code><a title="dearpygui.core.get_item_callback" href="#dearpygui.core.get_item_callback">get_item_callback</a></code></li>
+<li><code><a title="dearpygui.core.get_item_callback_data" href="#dearpygui.core.get_item_callback_data">get_item_callback_data</a></code></li>
 <li><code><a title="dearpygui.core.get_item_children" href="#dearpygui.core.get_item_children">get_item_children</a></code></li>
 <li><code><a title="dearpygui.core.get_item_configuration" href="#dearpygui.core.get_item_configuration">get_item_configuration</a></code></li>
 <li><code><a title="dearpygui.core.get_item_parent" href="#dearpygui.core.get_item_parent">get_item_parent</a></code></li>
@@ -9558,8 +9639,6 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.get_table_selections" href="#dearpygui.core.get_table_selections">get_table_selections</a></code></li>
 <li><code><a title="dearpygui.core.get_theme" href="#dearpygui.core.get_theme">get_theme</a></code></li>
 <li><code><a title="dearpygui.core.get_theme_item" href="#dearpygui.core.get_theme_item">get_theme_item</a></code></li>
-<li><code><a title="dearpygui.core.get_thread_count" href="#dearpygui.core.get_thread_count">get_thread_count</a></code></li>
-<li><code><a title="dearpygui.core.get_threadpool_timeout" href="#dearpygui.core.get_threadpool_timeout">get_threadpool_timeout</a></code></li>
 <li><code><a title="dearpygui.core.get_total_time" href="#dearpygui.core.get_total_time">get_total_time</a></code></li>
 <li><code><a title="dearpygui.core.get_value" href="#dearpygui.core.get_value">get_value</a></code></li>
 <li><code><a title="dearpygui.core.get_windows" href="#dearpygui.core.get_windows">get_windows</a></code></li>
@@ -9588,7 +9667,6 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.is_mouse_button_dragging" href="#dearpygui.core.is_mouse_button_dragging">is_mouse_button_dragging</a></code></li>
 <li><code><a title="dearpygui.core.is_mouse_button_released" href="#dearpygui.core.is_mouse_button_released">is_mouse_button_released</a></code></li>
 <li><code><a title="dearpygui.core.is_plot_queried" href="#dearpygui.core.is_plot_queried">is_plot_queried</a></code></li>
-<li><code><a title="dearpygui.core.is_threadpool_high_performance" href="#dearpygui.core.is_threadpool_high_performance">is_threadpool_high_performance</a></code></li>
 <li><code><a title="dearpygui.core.log" href="#dearpygui.core.log">log</a></code></li>
 <li><code><a title="dearpygui.core.log_debug" href="#dearpygui.core.log_debug">log_debug</a></code></li>
 <li><code><a title="dearpygui.core.log_error" href="#dearpygui.core.log_error">log_error</a></code></li>
@@ -9602,7 +9680,6 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.render_dearpygui_frame" href="#dearpygui.core.render_dearpygui_frame">render_dearpygui_frame</a></code></li>
 <li><code><a title="dearpygui.core.reset_xticks" href="#dearpygui.core.reset_xticks">reset_xticks</a></code></li>
 <li><code><a title="dearpygui.core.reset_yticks" href="#dearpygui.core.reset_yticks">reset_yticks</a></code></li>
-<li><code><a title="dearpygui.core.run_async_function" href="#dearpygui.core.run_async_function">run_async_function</a></code></li>
 <li><code><a title="dearpygui.core.select_directory_dialog" href="#dearpygui.core.select_directory_dialog">select_directory_dialog</a></code></li>
 <li><code><a title="dearpygui.core.send_draw_command_back" href="#dearpygui.core.send_draw_command_back">send_draw_command_back</a></code></li>
 <li><code><a title="dearpygui.core.send_draw_command_to_back" href="#dearpygui.core.send_draw_command_to_back">send_draw_command_to_back</a></code></li>
@@ -9614,12 +9691,14 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.set_headers" href="#dearpygui.core.set_headers">set_headers</a></code></li>
 <li><code><a title="dearpygui.core.set_individual_color" href="#dearpygui.core.set_individual_color">set_individual_color</a></code></li>
 <li><code><a title="dearpygui.core.set_item_callback" href="#dearpygui.core.set_item_callback">set_item_callback</a></code></li>
+<li><code><a title="dearpygui.core.set_item_callback_data" href="#dearpygui.core.set_item_callback_data">set_item_callback_data</a></code></li>
 <li><code><a title="dearpygui.core.set_item_color" href="#dearpygui.core.set_item_color">set_item_color</a></code></li>
 <li><code><a title="dearpygui.core.set_item_style_var" href="#dearpygui.core.set_item_style_var">set_item_style_var</a></code></li>
 <li><code><a title="dearpygui.core.set_key_down_callback" href="#dearpygui.core.set_key_down_callback">set_key_down_callback</a></code></li>
 <li><code><a title="dearpygui.core.set_key_press_callback" href="#dearpygui.core.set_key_press_callback">set_key_press_callback</a></code></li>
 <li><code><a title="dearpygui.core.set_key_release_callback" href="#dearpygui.core.set_key_release_callback">set_key_release_callback</a></code></li>
 <li><code><a title="dearpygui.core.set_log_level" href="#dearpygui.core.set_log_level">set_log_level</a></code></li>
+<li><code><a title="dearpygui.core.set_logger_window_title" href="#dearpygui.core.set_logger_window_title">set_logger_window_title</a></code></li>
 <li><code><a title="dearpygui.core.set_main_window_pos" href="#dearpygui.core.set_main_window_pos">set_main_window_pos</a></code></li>
 <li><code><a title="dearpygui.core.set_main_window_resizable" href="#dearpygui.core.set_main_window_resizable">set_main_window_resizable</a></code></li>
 <li><code><a title="dearpygui.core.set_main_window_size" href="#dearpygui.core.set_main_window_size">set_main_window_size</a></code></li>
@@ -9676,9 +9755,6 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.set_table_selection" href="#dearpygui.core.set_table_selection">set_table_selection</a></code></li>
 <li><code><a title="dearpygui.core.set_theme" href="#dearpygui.core.set_theme">set_theme</a></code></li>
 <li><code><a title="dearpygui.core.set_theme_item" href="#dearpygui.core.set_theme_item">set_theme_item</a></code></li>
-<li><code><a title="dearpygui.core.set_thread_count" href="#dearpygui.core.set_thread_count">set_thread_count</a></code></li>
-<li><code><a title="dearpygui.core.set_threadpool_high_performance" href="#dearpygui.core.set_threadpool_high_performance">set_threadpool_high_performance</a></code></li>
-<li><code><a title="dearpygui.core.set_threadpool_timeout" href="#dearpygui.core.set_threadpool_timeout">set_threadpool_timeout</a></code></li>
 <li><code><a title="dearpygui.core.set_value" href="#dearpygui.core.set_value">set_value</a></code></li>
 <li><code><a title="dearpygui.core.set_vsync" href="#dearpygui.core.set_vsync">set_vsync</a></code></li>
 <li><code><a title="dearpygui.core.set_xticks" href="#dearpygui.core.set_xticks">set_xticks</a></code></li>

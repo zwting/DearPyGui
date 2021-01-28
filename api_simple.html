@@ -366,7 +366,7 @@ def tree_node(name: str, *, label: str = &#34;__DearPyGuiDefault&#34;, show: boo
                                              before=before, default_open=default_open, 
                                              open_on_double_click=open_on_double_click, 
                                              open_on_arrow=open_on_arrow,
-                                             leaf=leaf, bullet=bullet)
+                                             leaf=leaf, bullet=bullet, label=label)
     finally:
         internal_dpg.end()
 
@@ -1860,7 +1860,7 @@ def tree_node(name: str, *, label: str = &#34;__DearPyGuiDefault&#34;, show: boo
                                              before=before, default_open=default_open, 
                                              open_on_double_click=open_on_double_click, 
                                              open_on_arrow=open_on_arrow,
-                                             leaf=leaf, bullet=bullet)
+                                             leaf=leaf, bullet=bullet, label=label)
     finally:
         internal_dpg.end()</code></pre>
 </details>

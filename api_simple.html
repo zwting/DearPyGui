@@ -651,7 +651,15 @@ def show_documentation(sender: str=&#34;&#34;, data: Any=None) -&gt; None:
     Returns:
         None
     &#34;&#34;&#34;
-    internal_dpg.configure_item(&#34;documentation##standard&#34;, show=True)</code></pre>
+    internal_dpg.configure_item(&#34;documentation##standard&#34;, show=True)
+
+def show_logger() -&gt; None:
+    &#34;&#34;&#34;Shows the logger window
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    internal_dpg.show_logger()</code></pre>
 </details>
 </section>
 <section>
@@ -1577,6 +1585,26 @@ anything after "##" that occurs in the name will not be shown on screen.</dd>
     internal_dpg.configure_item(item, show=True)</code></pre>
 </details>
 </dd>
+<dt id="dearpygui.simple.show_logger"><code class="name flex">
+<span>def <span class="ident">show_logger</span></span>(<span>) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows the logger window</p>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_logger() -&gt; None:
+    &#34;&#34;&#34;Shows the logger window
+
+    Returns:
+        None
+    &#34;&#34;&#34;
+    internal_dpg.show_logger()</code></pre>
+</details>
+</dd>
 <dt id="dearpygui.simple.show_metrics"><code class="name flex">
 <span>def <span class="ident">show_metrics</span></span>(<span>sender: str = '', data: Any = None) ‑> NoneType</span>
 </code></dt>
@@ -2022,6 +2050,7 @@ def window(name: str, *, width: int = 200, height: int = 200, x_pos: int = 200, 
 <li><code><a title="dearpygui.simple.show_debug" href="#dearpygui.simple.show_debug">show_debug</a></code></li>
 <li><code><a title="dearpygui.simple.show_documentation" href="#dearpygui.simple.show_documentation">show_documentation</a></code></li>
 <li><code><a title="dearpygui.simple.show_item" href="#dearpygui.simple.show_item">show_item</a></code></li>
+<li><code><a title="dearpygui.simple.show_logger" href="#dearpygui.simple.show_logger">show_logger</a></code></li>
 <li><code><a title="dearpygui.simple.show_metrics" href="#dearpygui.simple.show_metrics">show_metrics</a></code></li>
 <li><code><a title="dearpygui.simple.show_style_editor" href="#dearpygui.simple.show_style_editor">show_style_editor</a></code></li>
 <li><code><a title="dearpygui.simple.tab" href="#dearpygui.simple.tab">tab</a></code></li>

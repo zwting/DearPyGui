@@ -2546,6 +2546,45 @@ update plot bounds</p>
 </li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.add_hline_series"><code class="name flex">
+<span>def <span class="ident">add_hline_series</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a infinite horizontal line series to a plot.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>plot : str</p>
+</li>
+<li>
+<p>name : str</p>
+</li>
+<li>
+<p>x : List[float]</p>
+</li>
+<li>
+<p>Keyword Only Arguments</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>color : List[float] = (0, 0, 0, -1)</p>
+</li>
+<li>
+<p>weight : float = 1.0</p>
+</li>
+<li>
+<p>update_bounds : bool = True
+update plot bounds</p>
+</li>
+<li>
+<p>axis : int = 0</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.add_image"><code class="name flex">
 <span>def <span class="ident">add_image</span></span>(<span>...)</span>
 </code></dt>
@@ -6121,6 +6160,45 @@ Display a bullet instead of arrow</p>
 </li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.add_vline_series"><code class="name flex">
+<span>def <span class="ident">add_vline_series</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a infinite vertical line series to a plot.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>plot : str</p>
+</li>
+<li>
+<p>name : str</p>
+</li>
+<li>
+<p>x : List[float]</p>
+</li>
+<li>
+<p>Keyword Only Arguments</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>color : List[float] = (0, 0, 0, -1)</p>
+</li>
+<li>
+<p>weight : float = 1.0</p>
+</li>
+<li>
+<p>update_bounds : bool = True
+update plot bounds</p>
+</li>
+<li>
+<p>axis : int = 0</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.add_window"><code class="name flex">
 <span>def <span class="ident">add_window</span></span>(<span>...)</span>
 </code></dt>
@@ -7061,6 +7139,13 @@ add explicit dockspace over viewport</p>
 <p>tag : str</p>
 </li>
 </ul></div>
+</dd>
+<dt id="dearpygui.core.get_drawing_mouse_pos"><code class="name flex">
+<span>def <span class="ident">get_drawing_mouse_pos</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the current mouse position in the currently hovered drawing.</p>
+<p>Return Type: (int, int)</p></div>
 </dd>
 <dt id="dearpygui.core.get_global_font_scale"><code class="name flex">
 <span>def <span class="ident">get_global_font_scale</span></span>(<span>...)</span>
@@ -9483,6 +9568,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.add_error_series" href="#dearpygui.core.add_error_series">add_error_series</a></code></li>
 <li><code><a title="dearpygui.core.add_group" href="#dearpygui.core.add_group">add_group</a></code></li>
 <li><code><a title="dearpygui.core.add_heat_series" href="#dearpygui.core.add_heat_series">add_heat_series</a></code></li>
+<li><code><a title="dearpygui.core.add_hline_series" href="#dearpygui.core.add_hline_series">add_hline_series</a></code></li>
 <li><code><a title="dearpygui.core.add_image" href="#dearpygui.core.add_image">add_image</a></code></li>
 <li><code><a title="dearpygui.core.add_image_button" href="#dearpygui.core.add_image_button">add_image_button</a></code></li>
 <li><code><a title="dearpygui.core.add_image_series" href="#dearpygui.core.add_image_series">add_image_series</a></code></li>
@@ -9541,6 +9627,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.add_tooltip" href="#dearpygui.core.add_tooltip">add_tooltip</a></code></li>
 <li><code><a title="dearpygui.core.add_tree_node" href="#dearpygui.core.add_tree_node">add_tree_node</a></code></li>
 <li><code><a title="dearpygui.core.add_value" href="#dearpygui.core.add_value">add_value</a></code></li>
+<li><code><a title="dearpygui.core.add_vline_series" href="#dearpygui.core.add_vline_series">add_vline_series</a></code></li>
 <li><code><a title="dearpygui.core.add_window" href="#dearpygui.core.add_window">add_window</a></code></li>
 <li><code><a title="dearpygui.core.bring_draw_command_forward" href="#dearpygui.core.bring_draw_command_forward">bring_draw_command_forward</a></code></li>
 <li><code><a title="dearpygui.core.bring_draw_command_to_front" href="#dearpygui.core.bring_draw_command_to_front">bring_draw_command_to_front</a></code></li>
@@ -9584,6 +9671,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.get_dearpygui_version" href="#dearpygui.core.get_dearpygui_version">get_dearpygui_version</a></code></li>
 <li><code><a title="dearpygui.core.get_delta_time" href="#dearpygui.core.get_delta_time">get_delta_time</a></code></li>
 <li><code><a title="dearpygui.core.get_draw_command" href="#dearpygui.core.get_draw_command">get_draw_command</a></code></li>
+<li><code><a title="dearpygui.core.get_drawing_mouse_pos" href="#dearpygui.core.get_drawing_mouse_pos">get_drawing_mouse_pos</a></code></li>
 <li><code><a title="dearpygui.core.get_global_font_scale" href="#dearpygui.core.get_global_font_scale">get_global_font_scale</a></code></li>
 <li><code><a title="dearpygui.core.get_item_callback" href="#dearpygui.core.get_item_callback">get_item_callback</a></code></li>
 <li><code><a title="dearpygui.core.get_item_callback_data" href="#dearpygui.core.get_item_callback_data">get_item_callback_data</a></code></li>

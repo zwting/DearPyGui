@@ -4080,6 +4080,150 @@ This item will be displayed before the specified item in the parent. (runtime ad
 </li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.add_node"><code class="name flex">
+<span>def <span class="ident">add_node</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a node to a node editor.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>name : str</p>
+</li>
+<li>
+<p>Keyword Only Arguments</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>show : bool = True
+Attempt to render</p>
+</li>
+<li>
+<p>draggable : bool = True
+Allow node to be draggable.</p>
+</li>
+<li>
+<p>parent : str = ''
+Parent to add this item to. (runtime adding)</p>
+</li>
+<li>
+<p>before : str = ''
+This item will be displayed before the specified item in the parent. (runtime adding)</p>
+</li>
+<li>
+<p>x_pos : int = 100
+x position the node will start at</p>
+</li>
+<li>
+<p>y_pos : int = 100
+y position the node will start at</p>
+</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.add_node_attribute"><code class="name flex">
+<span>def <span class="ident">add_node_attribute</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a node attribute.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>name : str</p>
+</li>
+<li>
+<p>Keyword Only Arguments</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>output : bool = False
+Set as output attribute</p>
+</li>
+<li>
+<p>static : bool = False
+Set as static attribute</p>
+</li>
+<li>
+<p>show : bool = True
+Attempt to render</p>
+</li>
+<li>
+<p>parent : str = ''
+Parent to add this item to. (runtime adding)</p>
+</li>
+<li>
+<p>before : str = ''
+This item will be displayed before the specified item in the parent. (runtime adding)</p>
+</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.add_node_editor"><code class="name flex">
+<span>def <span class="ident">add_node_editor</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a node editor.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>name : str</p>
+</li>
+<li>
+<p>Keyword Only Arguments</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>show : bool = True
+Attempt to render</p>
+</li>
+<li>
+<p>parent : str = ''
+Parent to add this item to. (runtime adding)</p>
+</li>
+<li>
+<p>before : str = ''
+This item will be displayed before the specified item in the parent. (runtime adding)</p>
+</li>
+<li>
+<p>link_callback : Callable = None
+Callback ran when a new link is created.</p>
+</li>
+<li>
+<p>delink_callback : Callable = None
+Callback ran when a link is detached.</p>
+</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.add_node_link"><code class="name flex">
+<span>def <span class="ident">add_node_link</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a node link between nodes.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>node_editor : str</p>
+</li>
+<li>
+<p>node_1 : str</p>
+</li>
+<li>
+<p>node_2 : str</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.add_pie_series"><code class="name flex">
 <span>def <span class="ident">add_pie_series</span></span>(<span>...)</span>
 </code></dt>
@@ -5861,6 +6005,10 @@ This item will be displayed before the specified item in the parent. (runtime ad
 <p>height : int = 200</p>
 </li>
 <li>
+<p>hide_headers : bool = False
+Hide headers of the table</p>
+</li>
+<li>
 <p>show : bool = True
 Attempt to render</p>
 </li>
@@ -6395,6 +6543,30 @@ logger widget</li>
 <li>plot : str</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.clear_selected_links"><code class="name flex">
+<span>def <span class="ident">clear_selected_links</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clears selected links.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>node_editor : str</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.clear_selected_nodes"><code class="name flex">
+<span>def <span class="ident">clear_selected_nodes</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clears selected nodes.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>node_editor : str</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.clear_table"><code class="name flex">
 <span>def <span class="ident">clear_table</span></span>(<span>...)</span>
 </code></dt>
@@ -6579,6 +6751,26 @@ logger widget</li>
 delete children only</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.delete_node_link"><code class="name flex">
+<span>def <span class="ident">delete_node_link</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes a node link if it exist.</p>
+<p>Return Type: None</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>
+<p>node_editor : str</p>
+</li>
+<li>
+<p>node_1 : str</p>
+</li>
+<li>
+<p>node_2 : str</p>
+</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.delete_row"><code class="name flex">
 <span>def <span class="ident">delete_row</span></span>(<span>...)</span>
 </code></dt>
@@ -6750,7 +6942,7 @@ delete children only</li>
 <span>def <span class="ident">draw_image</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Draws an image on a drawing. p_min (bottom-left) and p_max (upper-right) represent corners of the rectangle the image will be drawn to.Setting the p_min equal to the p_max will sraw the image to with 1:1 scale.uv_min and uv_max represent the normalized texture coordinates of the original image that will be shown. Using (0,0)-&gt;(1,1) texturecoordinates will generally display the entire texture.</p>
+<div class="desc"><p>Draws an image on a drawing. p_min (top-left) and p_max (bottom-right) represent corners of the rectangle the image will be drawn to.Setting the p_min equal to the p_max will sraw the image to with 1:1 scale.uv_min and uv_max represent the normalized texture coordinates of the original image that will be shown. Using (0,0)-&gt;(1,1) texturecoordinates will generally display the entire texture.</p>
 <p>Return Type: None</p>
 <p>Parameters</p>
 <hr>
@@ -7262,6 +7454,18 @@ add explicit dockspace over viewport</p>
 <li>item : str</li>
 </ul></div>
 </dd>
+<dt id="dearpygui.core.get_links"><code class="name flex">
+<span>def <span class="ident">get_links</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns all links. </p>
+<p>Return Type: List[List[str]]</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>node_editor : str</li>
+</ul></div>
+</dd>
 <dt id="dearpygui.core.get_log_level"><code class="name flex">
 <span>def <span class="ident">get_log_level</span></span>(<span>...)</span>
 </code></dt>
@@ -7367,6 +7571,30 @@ logger widget</li>
 <hr>
 <ul>
 <li>plot : str</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.get_selected_links"><code class="name flex">
+<span>def <span class="ident">get_selected_links</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns selected links.</p>
+<p>Return Type: List[List[str]]</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>node_editor : str</li>
+</ul></div>
+</dd>
+<dt id="dearpygui.core.get_selected_nodes"><code class="name flex">
+<span>def <span class="ident">get_selected_nodes</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns selected nodes.</p>
+<p>Return Type: List[str]</p>
+<p>Parameters</p>
+<hr>
+<ul>
+<li>node_editor : str</li>
 </ul></div>
 </dd>
 <dt id="dearpygui.core.get_style_antialiased_fill"><code class="name flex">
@@ -9592,6 +9820,10 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.add_menu_item" href="#dearpygui.core.add_menu_item">add_menu_item</a></code></li>
 <li><code><a title="dearpygui.core.add_metrics_window" href="#dearpygui.core.add_metrics_window">add_metrics_window</a></code></li>
 <li><code><a title="dearpygui.core.add_next_column" href="#dearpygui.core.add_next_column">add_next_column</a></code></li>
+<li><code><a title="dearpygui.core.add_node" href="#dearpygui.core.add_node">add_node</a></code></li>
+<li><code><a title="dearpygui.core.add_node_attribute" href="#dearpygui.core.add_node_attribute">add_node_attribute</a></code></li>
+<li><code><a title="dearpygui.core.add_node_editor" href="#dearpygui.core.add_node_editor">add_node_editor</a></code></li>
+<li><code><a title="dearpygui.core.add_node_link" href="#dearpygui.core.add_node_link">add_node_link</a></code></li>
 <li><code><a title="dearpygui.core.add_pie_series" href="#dearpygui.core.add_pie_series">add_pie_series</a></code></li>
 <li><code><a title="dearpygui.core.add_plot" href="#dearpygui.core.add_plot">add_plot</a></code></li>
 <li><code><a title="dearpygui.core.add_popup" href="#dearpygui.core.add_popup">add_popup</a></code></li>
@@ -9637,6 +9869,8 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.clear_item_style_vars" href="#dearpygui.core.clear_item_style_vars">clear_item_style_vars</a></code></li>
 <li><code><a title="dearpygui.core.clear_log" href="#dearpygui.core.clear_log">clear_log</a></code></li>
 <li><code><a title="dearpygui.core.clear_plot" href="#dearpygui.core.clear_plot">clear_plot</a></code></li>
+<li><code><a title="dearpygui.core.clear_selected_links" href="#dearpygui.core.clear_selected_links">clear_selected_links</a></code></li>
+<li><code><a title="dearpygui.core.clear_selected_nodes" href="#dearpygui.core.clear_selected_nodes">clear_selected_nodes</a></code></li>
 <li><code><a title="dearpygui.core.clear_table" href="#dearpygui.core.clear_table">clear_table</a></code></li>
 <li><code><a title="dearpygui.core.close_popup" href="#dearpygui.core.close_popup">close_popup</a></code></li>
 <li><code><a title="dearpygui.core.configure_item" href="#dearpygui.core.configure_item">configure_item</a></code></li>
@@ -9649,6 +9883,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.delete_drag_point" href="#dearpygui.core.delete_drag_point">delete_drag_point</a></code></li>
 <li><code><a title="dearpygui.core.delete_draw_command" href="#dearpygui.core.delete_draw_command">delete_draw_command</a></code></li>
 <li><code><a title="dearpygui.core.delete_item" href="#dearpygui.core.delete_item">delete_item</a></code></li>
+<li><code><a title="dearpygui.core.delete_node_link" href="#dearpygui.core.delete_node_link">delete_node_link</a></code></li>
 <li><code><a title="dearpygui.core.delete_row" href="#dearpygui.core.delete_row">delete_row</a></code></li>
 <li><code><a title="dearpygui.core.delete_series" href="#dearpygui.core.delete_series">delete_series</a></code></li>
 <li><code><a title="dearpygui.core.does_item_exist" href="#dearpygui.core.does_item_exist">does_item_exist</a></code></li>
@@ -9682,6 +9917,7 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.get_item_rect_min" href="#dearpygui.core.get_item_rect_min">get_item_rect_min</a></code></li>
 <li><code><a title="dearpygui.core.get_item_rect_size" href="#dearpygui.core.get_item_rect_size">get_item_rect_size</a></code></li>
 <li><code><a title="dearpygui.core.get_item_type" href="#dearpygui.core.get_item_type">get_item_type</a></code></li>
+<li><code><a title="dearpygui.core.get_links" href="#dearpygui.core.get_links">get_links</a></code></li>
 <li><code><a title="dearpygui.core.get_log_level" href="#dearpygui.core.get_log_level">get_log_level</a></code></li>
 <li><code><a title="dearpygui.core.get_main_window_size" href="#dearpygui.core.get_main_window_size">get_main_window_size</a></code></li>
 <li><code><a title="dearpygui.core.get_managed_column_width" href="#dearpygui.core.get_managed_column_width">get_managed_column_width</a></code></li>
@@ -9691,6 +9927,8 @@ Attempt to render</p>
 <li><code><a title="dearpygui.core.get_plot_query_area" href="#dearpygui.core.get_plot_query_area">get_plot_query_area</a></code></li>
 <li><code><a title="dearpygui.core.get_plot_xlimits" href="#dearpygui.core.get_plot_xlimits">get_plot_xlimits</a></code></li>
 <li><code><a title="dearpygui.core.get_plot_ylimits" href="#dearpygui.core.get_plot_ylimits">get_plot_ylimits</a></code></li>
+<li><code><a title="dearpygui.core.get_selected_links" href="#dearpygui.core.get_selected_links">get_selected_links</a></code></li>
+<li><code><a title="dearpygui.core.get_selected_nodes" href="#dearpygui.core.get_selected_nodes">get_selected_nodes</a></code></li>
 <li><code><a title="dearpygui.core.get_style_antialiased_fill" href="#dearpygui.core.get_style_antialiased_fill">get_style_antialiased_fill</a></code></li>
 <li><code><a title="dearpygui.core.get_style_antialiased_lines" href="#dearpygui.core.get_style_antialiased_lines">get_style_antialiased_lines</a></code></li>
 <li><code><a title="dearpygui.core.get_style_button_text_align" href="#dearpygui.core.get_style_button_text_align">get_style_button_text_align</a></code></li>

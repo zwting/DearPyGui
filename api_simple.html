@@ -271,6 +271,74 @@ def group(name: str, *, show: bool = True, tip: str = &#34;&#34;, parent: str = 
     finally:
         internal_dpg.end()
 
+@contextmanager
+def node(name: str, *, label: str = &#34;__DearPyGuiDefault&#34;, show: bool = True, draggable: bool = True,
+         parent: str = &#34;&#34;, before: str = &#34;&#34;, x_pos: int = 100, y_pos: int = 100):
+    &#34;&#34;&#34;Wraps add_node() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **label: Displayed name of the item.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **draggable: Allow node to be draggable.
+        **x_pos: x position the node will start at
+        **y_pos: y position the node will start at
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        if label == &#34;__DearPyGuiDefault&#34;:
+            yield internal_dpg.add_node(name, show=show, parent=parent, before=before, 
+                                                     draggable=draggable, x_pos=x_pos, y_pos=y_pos)
+        else:
+            yield internal_dpg.add_node(name, label=label, show=show, parent=parent, before=before, 
+                                                     draggable=draggable, x_pos=x_pos, y_pos=y_pos)
+    finally:
+        internal_dpg.end()
+
+@contextmanager
+def node_attribute(name: str, *, show: bool = True, output: bool = False,
+         static: bool = False, parent: str = &#34;&#34;, before: str = &#34;&#34;):
+    &#34;&#34;&#34;Wraps add_node_attribute() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **output: Set as output attribute
+        **static: Set as static attribute
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        yield internal_dpg.add_node_attribute(name, show=show, parent=parent, before=before, 
+                                                    output=output, static=static)
+
+    finally:
+        internal_dpg.end()
+
+@contextmanager
+def node_editor(name: str, *, show: bool = True, parent: str = &#34;&#34;, before: str = &#34;&#34;, link_callback: Callable = None, delink_callback: Callable = None):
+    &#34;&#34;&#34;Wraps add_node_editor() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **link_callback: Callback ran when a new link is created
+        **delink_callback: Callback ran when a link is detached
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        yield internal_dpg.add_node_editor(name, show=show, parent=parent, before=before, link_callback=link_callback, delink_callback=delink_callback)
+    finally:
+        internal_dpg.end()
+
 
 @contextmanager
 def tab_bar(name: str, *, reorderable: bool = False, callback: Callable = None, callback_data: Any = None,  show: bool = True,
@@ -1206,6 +1274,162 @@ def menu_bar(name: str, *, show: bool = True, parent: str = &#34;&#34;, before: 
         internal_dpg.end()</code></pre>
 </details>
 </dd>
+<dt id="dearpygui.simple.node"><code class="name flex">
+<span>def <span class="ident">node</span></span>(<span>name: str, *, label: str = '__DearPyGuiDefault', show: bool = True, draggable: bool = True, parent: str = '', before: str = '', x_pos: int = 100, y_pos: int = 100)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wraps add_node() and automates calling end().</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>Unique name used to programmatically refer to the item. If label is unused this will be the label,
+anything after "##" that occurs in the name will not be shown on screen.</dd>
+<dt><strong><code>**label</code></strong></dt>
+<dd>Displayed name of the item.</dd>
+<dt><strong><code>**parent</code></strong></dt>
+<dd>Parent to add this item to. (runtime adding)</dd>
+<dt><strong><code>**before</code></strong></dt>
+<dd>This item will be displayed before the specified item in the parent. (runtime adding)</dd>
+<dt><strong><code>**show</code></strong></dt>
+<dd>sets if the item is shown or not window.</dd>
+<dt><strong><code>**draggable</code></strong></dt>
+<dd>Allow node to be draggable.</dd>
+<dt><strong><code>**x_pos</code></strong></dt>
+<dd>x position the node will start at</dd>
+<dt><strong><code>**y_pos</code></strong></dt>
+<dd>y position the node will start at</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@contextmanager
+def node(name: str, *, label: str = &#34;__DearPyGuiDefault&#34;, show: bool = True, draggable: bool = True,
+         parent: str = &#34;&#34;, before: str = &#34;&#34;, x_pos: int = 100, y_pos: int = 100):
+    &#34;&#34;&#34;Wraps add_node() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **label: Displayed name of the item.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **draggable: Allow node to be draggable.
+        **x_pos: x position the node will start at
+        **y_pos: y position the node will start at
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        if label == &#34;__DearPyGuiDefault&#34;:
+            yield internal_dpg.add_node(name, show=show, parent=parent, before=before, 
+                                                     draggable=draggable, x_pos=x_pos, y_pos=y_pos)
+        else:
+            yield internal_dpg.add_node(name, label=label, show=show, parent=parent, before=before, 
+                                                     draggable=draggable, x_pos=x_pos, y_pos=y_pos)
+    finally:
+        internal_dpg.end()</code></pre>
+</details>
+</dd>
+<dt id="dearpygui.simple.node_attribute"><code class="name flex">
+<span>def <span class="ident">node_attribute</span></span>(<span>name: str, *, show: bool = True, output: bool = False, static: bool = False, parent: str = '', before: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wraps add_node_attribute() and automates calling end().</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>Unique name used to programmatically refer to the item. If label is unused this will be the label,
+anything after "##" that occurs in the name will not be shown on screen.</dd>
+<dt><strong><code>**parent</code></strong></dt>
+<dd>Parent to add this item to. (runtime adding)</dd>
+<dt><strong><code>**before</code></strong></dt>
+<dd>This item will be displayed before the specified item in the parent. (runtime adding)</dd>
+<dt><strong><code>**show</code></strong></dt>
+<dd>sets if the item is shown or not window.</dd>
+<dt><strong><code>**output</code></strong></dt>
+<dd>Set as output attribute</dd>
+<dt><strong><code>**static</code></strong></dt>
+<dd>Set as static attribute</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@contextmanager
+def node_attribute(name: str, *, show: bool = True, output: bool = False,
+         static: bool = False, parent: str = &#34;&#34;, before: str = &#34;&#34;):
+    &#34;&#34;&#34;Wraps add_node_attribute() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **output: Set as output attribute
+        **static: Set as static attribute
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        yield internal_dpg.add_node_attribute(name, show=show, parent=parent, before=before, 
+                                                    output=output, static=static)
+
+    finally:
+        internal_dpg.end()</code></pre>
+</details>
+</dd>
+<dt id="dearpygui.simple.node_editor"><code class="name flex">
+<span>def <span class="ident">node_editor</span></span>(<span>name: str, *, show: bool = True, parent: str = '', before: str = '', link_callback: Callable = None, delink_callback: Callable = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Wraps add_node_editor() and automates calling end().</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>Unique name used to programmatically refer to the item. If label is unused this will be the label,
+anything after "##" that occurs in the name will not be shown on screen.</dd>
+<dt><strong><code>**parent</code></strong></dt>
+<dd>Parent to add this item to. (runtime adding)</dd>
+<dt><strong><code>**before</code></strong></dt>
+<dd>This item will be displayed before the specified item in the parent. (runtime adding)</dd>
+<dt><strong><code>**show</code></strong></dt>
+<dd>sets if the item is shown or not window.</dd>
+<dt><strong><code>**link_callback</code></strong></dt>
+<dd>Callback ran when a new link is created</dd>
+<dt><strong><code>**delink_callback</code></strong></dt>
+<dd>Callback ran when a link is detached</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@contextmanager
+def node_editor(name: str, *, show: bool = True, parent: str = &#34;&#34;, before: str = &#34;&#34;, link_callback: Callable = None, delink_callback: Callable = None):
+    &#34;&#34;&#34;Wraps add_node_editor() and automates calling end().
+    Args:
+        name: Unique name used to programmatically refer to the item. If label is unused this will be the label,
+            anything after &#34;##&#34; that occurs in the name will not be shown on screen.
+        **parent: Parent to add this item to. (runtime adding)
+        **before: This item will be displayed before the specified item in the parent. (runtime adding)
+        **show: sets if the item is shown or not window.
+        **link_callback: Callback ran when a new link is created
+        **delink_callback: Callback ran when a link is detached
+    Returns:
+        None
+    &#34;&#34;&#34;
+    try:
+        yield internal_dpg.add_node_editor(name, show=show, parent=parent, before=before, link_callback=link_callback, delink_callback=delink_callback)
+    finally:
+        internal_dpg.end()</code></pre>
+</details>
+</dd>
 <dt id="dearpygui.simple.popup"><code class="name flex">
 <span>def <span class="ident">popup</span></span>(<span>popupparent: str, name: str, *, mousebutton: int = 1, modal: bool = False, parent: str = '', before: str = '', width: int = 0, height: int = 0, show: bool = True)</span>
 </code></dt>
@@ -2038,6 +2262,9 @@ def window(name: str, *, width: int = 200, height: int = 200, x_pos: int = 200, 
 <li><code><a title="dearpygui.simple.managed_columns" href="#dearpygui.simple.managed_columns">managed_columns</a></code></li>
 <li><code><a title="dearpygui.simple.menu" href="#dearpygui.simple.menu">menu</a></code></li>
 <li><code><a title="dearpygui.simple.menu_bar" href="#dearpygui.simple.menu_bar">menu_bar</a></code></li>
+<li><code><a title="dearpygui.simple.node" href="#dearpygui.simple.node">node</a></code></li>
+<li><code><a title="dearpygui.simple.node_attribute" href="#dearpygui.simple.node_attribute">node_attribute</a></code></li>
+<li><code><a title="dearpygui.simple.node_editor" href="#dearpygui.simple.node_editor">node_editor</a></code></li>
 <li><code><a title="dearpygui.simple.popup" href="#dearpygui.simple.popup">popup</a></code></li>
 <li><code><a title="dearpygui.simple.set_drawing_size" href="#dearpygui.simple.set_drawing_size">set_drawing_size</a></code></li>
 <li><code><a title="dearpygui.simple.set_item_height" href="#dearpygui.simple.set_item_height">set_item_height</a></code></li>

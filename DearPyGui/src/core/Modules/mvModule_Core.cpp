@@ -91,6 +91,7 @@ namespace Marvel {
 			ADD_PYTHON_FUNCTION(get_windows)
 			ADD_PYTHON_FUNCTION(get_all_items)
 			ADD_PYTHON_FUNCTION(get_item_children)
+			ADD_PYTHON_FUNCTION(set_label)
 
 			// widget commands
 			ADD_PYTHON_FUNCTION(add_logger)

@@ -46,10 +46,9 @@ set(MVDPG_VERSION ${MVDPG_VERSION})
 
 # if this is not a distribution build
 # build development environment
-if(NOT MVDIST_ONLY AND NOT MV_CPP)
-    add_subdirectory("Dependencies/spdlog")
+# if(NOT MVDIST_ONLY AND NOT MV_CPP)
     add_subdirectory ("DearSandbox")
-endif()
+# endif()
 
 if(WIN32)
     # do nothing

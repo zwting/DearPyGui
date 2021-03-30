@@ -5,6 +5,31 @@
 
 namespace Marvel{
 
+	PyObject* set_label(PyObject* self, PyObject* args, PyObject* kwargs)
+	{
+		const char* item_name;
+		const char* label;
+		if (!(*mvApp::GetApp()->getParsers())["set_label"].parse(args, kwargs, __FUNCTION__, &item_name, &label))
+			return GetPyNone();
+
+		const auto ret_item = mvApp::GetApp()->getItemRegistry().getItem(item_name);
+		if (!ret_item)
+			return GetPyNone();
+
+		ret_item->setLabel(label);
+		return GetPyNone();
+	}
+
+	void mvAppItem::InsertParser(std::map<std::string, mvPythonParser>* parsers)
+	{
+		parsers->insert({ "set_label", mvPythonParser({
+			{mvPythonDataType::String, "item_name"},
+			{mvPythonDataType::String, "label"},
+		}, "Set an item's label.", "None", "App") });
+
+	}
+
+
 	mvAppItem::mvAppItem(const std::string& name)
 	{
 		m_core_config.name = name;

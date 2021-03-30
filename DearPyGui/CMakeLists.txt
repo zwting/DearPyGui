@@ -24,6 +24,6 @@ if(MVDIST_ONLY)
 	endif()
 
 # For development
-else()
+# else()
 	include("cmake/embedded.cmake")
 endif()

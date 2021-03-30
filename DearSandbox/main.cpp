@@ -15,6 +15,12 @@ using namespace Marvel;
 int main(int argc, char* argv[])
 {
 
+	if(argc >= 2 && strcmp(argv[1], "--gen-pyi") == 0)
+	{
+		GenerateStubFile("../../DearPyGui/dearpygui/core.pyi");
+		return 0;
+	}
+
 #ifdef MV_RELEASE
 	HWND hWnd = GetConsoleWindow();
 	ShowWindow(hWnd, SW_HIDE);

@@ -6,4 +6,6 @@ cmake-build-release/
 cmake-build-local/
 Output/
 dist/
+build/
+venv/
 .DS_Store

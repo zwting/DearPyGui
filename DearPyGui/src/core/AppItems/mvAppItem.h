@@ -73,6 +73,12 @@ namespace Marvel {
         
     };
 
+
+#ifdef MV_CPP
+#else
+	PyObject* set_label(PyObject* self, PyObject* args, PyObject* kwargs);
+#endif
+
     //-----------------------------------------------------------------------------
     // mvAppItem
     //-----------------------------------------------------------------------------
@@ -187,7 +193,10 @@ namespace Marvel {
         virtual void                        setHeight                 (int height)              { m_core_config.height = height; }
         virtual void                        setEnabled                (bool value)              { m_core_config.enabled = value; }
         virtual void                        setDataSource             (const std::string& value){ m_core_config.source = value; }
+
+    public:
         virtual void                        setLabel                  (const std::string& value); 
+        static void InsertParser(std::map<std::string, mvPythonParser>* parsers);
 
     private:
 
